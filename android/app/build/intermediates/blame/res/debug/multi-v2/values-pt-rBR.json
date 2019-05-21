@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/honeysys/React/NyTimes/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "/Users/honeysys/React/NYTimes_React/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/Users/honeysys/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/a37effbf69e014dab01ef09951b9e27e/res/values-pt-rBR/values-pt-rBR.xml",
