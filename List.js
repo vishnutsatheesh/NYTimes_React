@@ -106,17 +106,17 @@ class List extends Component {
           <TouchableOpacity
              key = {item.id}
               style = {styles.container}
-             onPress = {() => this.alertItemName(item.jsonObj["media-metadata"])}>
+             onPress = {() => this.alertItemName(item.id)}>
              <View style={{flex: 1, flexDirection: 'row'}}>
 
   <View style={{ width: 100,height: 100, backgroundColor: 'powderblue'}} >
-  <Image source={{uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg", isStatic: true}} style={{width: 100, height: 100}}/>
+  <Image source={{uri: "https://cdn-images-1.medium.com/max/1200/0*Qup3L7adSA8iZO_R.png", isStatic: true}} style={{width: 100, height: 100}}/>
 
   </View>
 
   <View style={{flex: 1,height: 100, flexDirection: 'column'}}>
 
-  <View style={{ flex: 1, backgroundColor: 'skyblue'}} >
+  <View style={{ flex: 2, backgroundColor: 'skyblue'}} >
   <Text style = {styles.wordBold}>{item.title}</Text>
   </View>
 
@@ -168,7 +168,7 @@ const styles = StyleSheet.create ({
       alignItems:'baseline'
    },
    wordBold: {
-     fontSize: 20,
+     fontSize: 15,
       fontWeight: 'bold',
       color: 'black',
       paddingLeft:5
