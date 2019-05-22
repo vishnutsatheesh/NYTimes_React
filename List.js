@@ -50,30 +50,9 @@ class List extends Component {
            this.setState({
              loading: false,
              dataSource: responseJson.results,
-             states : {
-                names: [
-                   {
-                      id: 0,
-                      name: 'Ben'
-                   },
-                   {
-                      id: 1,
-                      name: 'Susanccccccccc',
-                   },
-                   {
-                      id: 2,
-                      name: 'Robertccccc',
-                   },
-                   {
-                      id: 3,
-                      name: 'Marddwy',
-                   }
-                ]
-             },
-
            }, function(){
-
-
+var j=JSON.stringify(responseJson.results);
+console.log(j);
             // this.setview();
 
            });
@@ -102,6 +81,8 @@ class List extends Component {
          <FlatList
           data={this.state.dataSource}
           renderItem={({item}) =>
+
+
 
           <TouchableOpacity
              key = {item.id}
