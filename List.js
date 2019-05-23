@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet,AppRegistry, Image,ActivityIndicator,FlatList  } from 'react-native'
+import { createStackNavigator, createAppContainer } from "react-navigation";
+
 
 class List extends Component {
 
@@ -49,11 +51,12 @@ class List extends Component {
          .then((responseJson) => {
            this.setState({
              loading: false,
-             dataSource: responseJson.results,
+             dataSource: JSON.parse(JSON.stringify(responseJson.results).replace("media-metadata", "media_metadata")),
            }, function(){
-var j=JSON.stringify(responseJson.results);
-console.log(j);
-            // this.setview();
+var str=JSON.stringify(responseJson.results);
+var res = str.replace("media-metadata", "mediametadata");
+this.dataSource=JSON.parse(res);
+this.dataSource=null;
 
            });
 
@@ -87,18 +90,18 @@ console.log(j);
           <TouchableOpacity
              key = {item.id}
               style = {styles.container}
-             onPress = {() => this.alertItemName(item.id)}>
+            >
              <View style={{flex: 1, flexDirection: 'row'}}>
 
   <View style={{ width: 100,height: 100, backgroundColor: 'powderblue'}} >
-  <Image source={{uri: "https://cdn-images-1.medium.com/max/1200/0*Qup3L7adSA8iZO_R.png", isStatic: true}} style={{width: 100, height: 100}}/>
+  <Image source={{uri: "https://static01.nyt.com/images/2019/05/13/business/00deutschetrump2/00deutschetrump2-sfSpan.jpg", isStatic: true}} style={{width: 100, height: 100}}/>
 
   </View>
 
   <View style={{flex: 1,height: 100, flexDirection: 'column'}}>
 
   <View style={{ flex: 2, backgroundColor: 'skyblue'}} >
-  <Text style = {styles.wordBold}>{item.title}</Text>
+  <Text style = {styles.wordBold}>{JSON.stringify(item.mediametadata[0].url)}</Text>
   </View>
 
   <View style={{ flex: 1, backgroundColor: 'steelblue'}} >
@@ -134,13 +137,15 @@ console.log(j);
       )
    }
 }
+
 export default List
+
 
 const styles = StyleSheet.create ({
    container: {
       padding: 10,
       marginTop:5,
-      height:100,
+      height:400,
       alignItems: 'center',
    },
    text: {

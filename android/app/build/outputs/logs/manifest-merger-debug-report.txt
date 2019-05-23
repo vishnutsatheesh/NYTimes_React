@@ -5,6 +5,7 @@ INJECTED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidMa
 INJECTED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-gesture-handler] /Users/honeysys/React/NYTimes_React/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.59.8] /Users/honeysys/.gradle/caches/transforms-1/files-1.1/react-native-0.59.8.aar/04e0f6de67f28ca12607b8c548aacaa2/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/honeysys/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/a37effbf69e014dab01ef09951b9e27e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/honeysys/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/130067319b2dcc79f332cc57a4db41e3/AndroidManifest.xml:17:1-22:12
@@ -129,6 +130,8 @@ uses-sdk
 INJECTED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/honeysys/React/NYTimes_React/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-gesture-handler] /Users/honeysys/React/NYTimes_React/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/honeysys/React/NYTimes_React/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.59.8] /Users/honeysys/.gradle/caches/transforms-1/files-1.1/react-native-0.59.8.aar/04e0f6de67f28ca12607b8c548aacaa2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.59.8] /Users/honeysys/.gradle/caches/transforms-1/files-1.1/react-native-0.59.8.aar/04e0f6de67f28ca12607b8c548aacaa2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/honeysys/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/a37effbf69e014dab01ef09951b9e27e/AndroidManifest.xml:20:5-44
