@@ -4,11 +4,6 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 
 
 class List extends Component {
-
-
-
-
-
    alertItemName = (item) => {
       alert(item.name)
    }
@@ -18,45 +13,21 @@ class List extends Component {
 
        this.state = {
          loading: true,
-         data: [],
-         page: 1,
-         seed: 1,
-         error: null,
          refreshing: false,
-         states : {
-            names: [
-               {
-                  id: 0,
-                  name: 'Ben'
-               },
-               {
-                  id: 1,
-                  name: 'Susan',
-               },
-               {
-                  id: 2,
-                  name: 'Robert',
-               },
-               {
-                  id: 3,
-                  name: 'Mary',
-               }
-            ]
-         },
+         states : {},
        };
      }
+
+
    componentDidMount(){
        return fetch('http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=54acea37ea804f3eafc2404736bafca3')
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
              loading: false,
-             dataSource: JSON.parse(JSON.stringify(responseJson.results).replace("media-metadata", "media_metadata")),
+             dataSource: responseJson.results,
            }, function(){
-var str=JSON.stringify(responseJson.results);
-var res = str.replace("media-metadata", "mediametadata");
-this.dataSource=JSON.parse(res);
-this.dataSource=null;
+
 
            });
 
@@ -72,7 +43,7 @@ this.dataSource=null;
 
      if (this.state.loading) {
      return (
-       <View style={{flex: 1, paddingTop: 20, backgroundColor: "red"}}>
+       <View style={{flex: 1, paddingTop: 20}}>
          <ActivityIndicator />
        </View>
      );
@@ -84,9 +55,6 @@ this.dataSource=null;
          <FlatList
           data={this.state.dataSource}
           renderItem={({item}) =>
-
-
-
           <TouchableOpacity
              key = {item.id}
               style = {styles.container}
@@ -94,14 +62,14 @@ this.dataSource=null;
              <View style={{flex: 1, flexDirection: 'row'}}>
 
   <View style={{ width: 100,height: 100, backgroundColor: 'powderblue'}} >
-  <Image source={{uri: "https://static01.nyt.com/images/2019/05/13/business/00deutschetrump2/00deutschetrump2-sfSpan.jpg", isStatic: true}} style={{width: 100, height: 100}}/>
+  <Image source={{uri: item.media[0]["media-metadata"][0].url, isStatic: true}} style={{width: 100, height: 100}}/>
 
   </View>
 
   <View style={{flex: 1,height: 100, flexDirection: 'column'}}>
 
   <View style={{ flex: 2, backgroundColor: 'skyblue'}} >
-  <Text style = {styles.wordBold}>{JSON.stringify(item.mediametadata[0].url)}</Text>
+  <Text style = {styles.wordBold}>{JSON.stringify(item.title)}</Text>
   </View>
 
   <View style={{ flex: 1, backgroundColor: 'steelblue'}} >
@@ -145,7 +113,7 @@ const styles = StyleSheet.create ({
    container: {
       padding: 10,
       marginTop:5,
-      height:400,
+      height:100,
       alignItems: 'center',
    },
    text: {
